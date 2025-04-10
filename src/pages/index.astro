@@ -1,0 +1,169 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CarouselPolaroid from "../components/CarouselPolaroid.astro";
+import Countdown from "../components/Countdown.astro";
+import Carta from "../components/Carta.astro";
+import Pucca from "../components/pucca.astro"
+// Datos de las imágenes
+const polaroidData = [
+	{
+		src: "/img/1.jpg",
+		alt: "Nuestro primer día juntos",
+		caption: "El inicio de algo maravilloso 🌟",
+	},
+	{
+		src: "/img/2.jpg",
+		alt: "Aventura en la montaña",
+		caption: "Juntos podemos con todo ⛰️",
+	},
+	{
+		src: "/img/3.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/4.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/5.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/6.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/7.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/8.jpg",
+		alt: "Aventura en la montaña",
+		caption: "Juntos podemos con todo ⛰️",
+	},
+	{
+		src: "/img/9.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/10.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/11.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/12.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+	{
+		src: "/img/13.jpg",
+		alt: "Celebrando nuestro aniversario",
+		caption: "Un año de sonrisas contigo 🎉",
+	},
+];
+---
+
+<Layout>
+	<header class="header">
+		<h1>Nuestra Historia📸</h1>
+		<div class="hearts">
+			<div class="heart">♥</div>
+			<div class="heart">♥</div>
+			<div class="heart">♥</div>
+		</div>
+	</header>
+	<main>
+		<CarouselPolaroid images={polaroidData} />
+		<section class="love-message">
+			<h2>Cada foto es un latido de mi corazón</h2>
+			<p>Desliza para revivir nuestros mejores momentos...</p>
+		</section>
+		<Carta
+			<CartaRomantica
+			destinatario="Mi Amor Eterno"
+			remitente="Con todo mi corazón, Alex"
+			fecha="14 de Febrero"
+			mensaje={`
+		  <p>En este día especial quiero recordarte...</p>
+		  <p>Eres mi razón para sonreír cada mañana 🌸</p>
+		  <p>Tu luz ilumina hasta mis momentos más oscuros 💫</p>
+		  <p style="text-align: center; margin: 1rem 0;">♾️ Te amo infinito ♾️</p>
+		`}
+		/><Countdown />	</Pucca>
+
+	</main>
+</Layout>
+<style>
+	.love-message {
+	  text-align: center;
+	  padding: 4rem 1rem;
+	  font-family: 'Handlee', cursive;
+	  background: #fff9fb;
+	}
+  
+	.love-message h2 {
+	  color: #e91e63;
+	  font-size: 2.5rem;
+	  margin-bottom: 1rem;
+	}
+  
+	.love-message p {
+	  font-size: 1.2rem;
+	  color: #795548;
+	}
+	.header {
+    text-align: center;
+    padding: 2rem;
+    background: #fff0f5;
+    position: relative;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .hearts {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .heart {
+    animation: float 3s ease-in-out infinite;
+    font-size: 1.5rem;
+    color: #ff69b4;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+    position: relative;
+  }
+
+  .firework {
+    font-size: 2rem;
+    animation: sparkle 1s infinite alternate;
+    margin-top: 1rem;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes sparkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
+  </style>
