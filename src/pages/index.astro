@@ -2,74 +2,75 @@
 import Layout from "../layouts/Layout.astro";
 import CarouselPolaroid from "../components/CarouselPolaroid.astro";
 import Countdown from "../components/Countdown.astro";
+import Countdown1 from "../components/Countdown1.astro";
+import Countdown2 from "../components/Countdown2.astro";
 import Carta from "../components/Carta.astro";
-import Pucca from "../components/pucca.astro"
 // Datos de las imágenes
 const polaroidData = [
 	{
-		src: "/img/1.jpg",
+		src: "/con-amor/img/1.jpg",
 		alt: "Nuestro primer día juntos",
-		caption: "El inicio de algo maravilloso 🌟",
+		caption: "Contigo, cada momento se vuelve eterno. ❤️",
 	},
 	{
-		src: "/img/2.jpg",
+		src: "/con-amor/img/2.jpg",
 		alt: "Aventura en la montaña",
-		caption: "Juntos podemos con todo ⛰️",
+		caption: "No necesito filtros cuando estoy a tu lado.",
 	},
 	{
-		src: "/img/3.jpg",
+		src: "/con-amor/img/3.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: " Mi lugar favorito siempre será donde estés tú.",
 	},
 	{
-		src: "/img/4.jpg",
+		src: "/con-amor/img/4.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: "Tú y yo, creando recuerdos que el corazón no olvida.",
 	},
 	{
-		src: "/img/5.jpg",
+		src: "/con-amor/img/5.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: " Eres la sonrisa que no sabía que me hacía falta.",
 	},
 	{
-		src: "/img/6.jpg",
+		src: "/con-amor/img/6.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: "Dos almas, una historia.",
 	},
 	{
-		src: "/img/7.jpg",
+		src: "/con-amor/img/7.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: "Tu mirada tiene el poder de calmar mis tormentas.",
 	},
 	{
-		src: "/img/8.jpg",
+		src: "/con-amor/img/8.jpg",
 		alt: "Aventura en la montaña",
-		caption: "Juntos podemos con todo ⛰️",
+		caption: " Amarte es la mejor parte de mis días.",
 	},
 	{
-		src: "/img/9.jpg",
+		src: "/con-amor/img/9.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: "Tus abrazos son mi lugar seguro.",
 	},
 	{
-		src: "/img/10.jpg",
+		src: "/con-amor/img/10.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: " Cada foto contigo es una prueba de que la felicidad existe.",
 	},
 	{
-		src: "/img/11.jpg",
+		src: "/con-amor/img/11.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: "En un mundo lleno de caos, tú eres mi paz.",
 	},
 	{
-		src: "/img/12.jpg",
+		src: "/con-amor/img/12.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: " Contigo todo se ve más bonito, incluso yo.",
 	},
 	{
-		src: "/img/13.jpg",
+		src: "/con-amor/img/13.jpg",
 		alt: "Celebrando nuestro aniversario",
-		caption: "Un año de sonrisas contigo 🎉",
+		caption: " No somos perfectos, pero juntos somos magia",
 	},
 ];
 ---
@@ -92,15 +93,22 @@ const polaroidData = [
 		<Carta
 			<CartaRomantica
 			destinatario="Mi Amor Eterno"
-			remitente="Con todo mi corazón, Alex"
-			fecha="14 de Febrero"
+			remitente="Con todo mi corazón"
+			fecha="11 de Abril"
 			mensaje={`
 		  <p>En este día especial quiero recordarte...</p>
-		  <p>Eres mi razón para sonreír cada mañana 🌸</p>
-		  <p>Tu luz ilumina hasta mis momentos más oscuros 💫</p>
-		  <p style="text-align: center; margin: 1rem 0;">♾️ Te amo infinito ♾️</p>
+		  <p>No hay palabras exactas para describir lo que siento por ti, pero quiero intentarlo. Desde el primer momento en que vi tus ojos de oro supe que en ellos había algo especial, no solo por su belleza, sino por la paz y la verdad que transmiten. Son claros, sí, pero también profundos, sinceros… como si tu alma se asomara cada vez que me miras.
+
+Tu corazón es grande, noble, lleno de luz. Siempre encuentras la manera de hacerme sentir amado, incluso con los gestos más pequeños. Tienes una sensibilidad que pocas personas tienen, y eso te hace única. Eres de esas personas que no solo aman con palabras, sino con acciones, con silencios, con miradas.
+
+Gracias por dejarme entrar en tu mundo, por confiar en mí y regalarme tu esencia. Prometo cuidar de ti, de tu mirada y de tu corazón, como el tesoro más valioso que tengo.</p>
+
 		`}
-		/><Countdown />	</Pucca>
+		/>
+		<Countdown1   startDate="2025-02-05T00:00:00" 
+		 />	
+
+
 
 	</main>
 </Layout>

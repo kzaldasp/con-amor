@@ -1,0 +1,177 @@
+---
+// components/TripleTimer.astro
+const events = [
+  {
+    title: "Desde la primera vez que hablamos con confianza",
+    date: new Date('2015-01-22T00:00:00')
+  },
+  {
+    title: "Desde la primera vez que salimos",
+    date: new Date('2024-12-31T00:00:00')
+  },
+  {
+    title: "Desde la primera vez que te besé",
+    date: new Date('2025-02-05T00:00:00')
+  }
+];
+---
+
+<style>
+  .timers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .timer-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    border: 1px solid #eee;
+  }
+
+  .timer-header {
+    flex: 0 0 180px;
+    text-align: center;
+    border-right: 2px solid #f0f0f0;
+    padding-right: 1.2rem;
+  }
+
+  .timer-title {
+    font-family: 'Segoe UI', sans-serif;
+    color: #444;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .timer-units {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .time-unit {
+    text-align: center;
+    position: relative;
+  }
+
+  .number {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .label {
+    font-family: 'Segoe UI', sans-serif;
+    color: #95a5a6;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.2rem;
+  }
+
+  .divider {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-top: -0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .timer-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .timer-header {
+      border-right: none;
+      border-bottom: 2px solid #f0f0f0;
+      padding-right: 0;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      flex-basis: auto;
+    }
+    
+    .timer-units {
+      justify-content: center;
+    }
+  }
+</style>
+
+<div class="timers-container">
+  {events.map((event, index) => (
+    <div class="timer-card" id={`timer-${index}`}>
+      <div class="timer-header">
+        <h3 class="timer-title">{event.title}</h3>
+      </div>
+      
+      <div class="timer-units">
+        <div class="time-unit">
+          <div class="number" id={`days-${index}`}>0</div>
+          <div class="label">Días</div>
+        </div>
+        <div class="divider">:</div>
+        
+        <div class="time-unit">
+          <div class="number" id={`hours-${index}`}>00</div>
+          <div class="label">Horas</div>
+        </div>
+        <div class="divider">:</div>
+        
+        <div class="time-unit">
+          <div class="number" id={`minutes-${index}`}>00</div>
+          <div class="label">Minutos</div>
+        </div>
+        <div class="divider">:</div>
+        
+        <div class="time-unit">
+          <div class="number" id={`seconds-${index}`}>00</div>
+          <div class="label">Segundos</div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const events = [
+      { date: new Date('2015-01-22T00:00:00') },
+      { date: new Date('2024-12-31T00:00:00') },
+      { date: new Date('2025-02-05T00:00:00') }
+    ];
+
+    function updateAllTimers() {
+      events.forEach((event, index) => {
+        const now = new Date();
+        const diff = now - event.date;
+        
+        if (diff < 0) {
+          document.querySelector(`#timer-${index} .timer-title`).textContent += ' (Próximamente)';
+          return;
+        }
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById(`days-${index}`).textContent = days;
+        document.getElementById(`hours-${index}`).textContent = hours.toString().padStart(2, '0');
+        document.getElementById(`minutes-${index}`).textContent = minutes.toString().padStart(2, '0');
+        document.getElementById(`seconds-${index}`).textContent = seconds.toString().padStart(2, '0');
+      });
+    }
+
+    updateAllTimers();
+    setInterval(updateAllTimers, 1000);
+  });
+</script>
